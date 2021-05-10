@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<style type="text/css">
+		body {
+			height: 100vh;
+			width: 100vw;
+			display: grid;
+			place-content: center;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: space-evenly;
+			align-items: space-evenly;
+			height: 15em;
+			max-width: 20em;
+		}
+		h1 {
+			text-align: center;
+		}
+		button {
+			background-color: #3b3ef7;
+			color: white;
+			font-weight: 1000;
+			padding: 10px;
+			border:none ;
+			border-radius: 20px;
+		}
+		input {
+			border: none;
+			background-color: #f2f2f2;
+			padding: 10px;
+		}
+		input:focus {
+			border: 2px solid rgb(78, 78, 253);
+		}
+	</style>
+</head>
+<body>
+	<h1>Login</h1>
+	<form action="/login" method="POST">
+		{% csrf_token %}
+		<input type="text" name="username" placeholder="username">
+		<input type="password" name="password" placeholder="password">
+		<button type="submit">LOGIN</button>
+	</form>
+	{% if error %} 
+	<script>
+		window.alert("Invalid username or password");
+	</script>
+	{% endif %}
+	<script>
+
+	</script>
+</body>
+</html>
